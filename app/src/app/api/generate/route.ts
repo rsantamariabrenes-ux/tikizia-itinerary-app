@@ -13,25 +13,21 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: 'Missing token or answers' }, { status: 400 });
   }
 
-  const { data, error } = await supabase
-    .from('access_tokens')
-    .select('generations_remaining')
-    .eq('token', token)
-    .single();
+  // Atomic decrement: only decrements if generations_remaining > 0
+  // Returns the new count, or empty array if token not found or count was already 0
+  const { data, error } = await supabase.rpc('decrement_generation', { p_token: token });
 
-  if (error || !data) {
-    return NextResponse.json({ error: 'Invalid access token' }, { status: 401 });
+  if (error) {
+    console.error('Decrement RPC error:', error);
+    return NextResponse.json({ error: 'Database error' }, { status: 500 });
   }
 
-  if (data.generations_remaining <= 0) {
-    return NextResponse.json({ error: 'No generations remaining' }, { status: 403 });
+  if (!data || data.length === 0) {
+    // Token not found OR generations_remaining was already 0
+    return NextResponse.json({ error: 'No generations remaining or invalid token' }, { status: 403 });
   }
 
-  const newCount = data.generations_remaining - 1;
-  await supabase
-    .from('access_tokens')
-    .update({ generations_remaining: newCount, last_used_at: new Date().toISOString() })
-    .eq('token', token);
+  const newCount: number = data[0].generations_remaining;
 
   const html = await generateItinerary(answers);
 

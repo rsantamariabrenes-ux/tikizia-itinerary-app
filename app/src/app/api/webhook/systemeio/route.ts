@@ -7,6 +7,10 @@ const resend = new Resend(process.env.RESEND_API_KEY!);
 const APP_URL = process.env.NEXT_PUBLIC_APP_URL!;
 const WEBHOOK_SECRET = process.env.SYSTEMEIO_WEBHOOK_SECRET!;
 
+if (!WEBHOOK_SECRET) {
+  throw new Error('SYSTEMEIO_WEBHOOK_SECRET environment variable is not set');
+}
+
 export async function POST(req: NextRequest) {
   const secret = req.headers.get('x-webhook-secret');
   if (secret !== WEBHOOK_SECRET) {
@@ -39,11 +43,12 @@ export async function POST(req: NextRequest) {
 
   const accessUrl = `${APP_URL}/access/${token}`;
 
-  await resend.emails.send({
-    from: 'Explore TikiZia <itinerary@exploretikizia.com>',
-    to: email,
-    subject: 'Your Costa Rica Itinerary Generator Is Ready 🌿',
-    html: `
+  try {
+    const { error: emailError } = await resend.emails.send({
+      from: 'Explore TikiZia <itinerary@exploretikizia.com>',
+      to: email,
+      subject: 'Your Costa Rica Itinerary Generator Is Ready 🌿',
+      html: `
 <!DOCTYPE html>
 <html>
 <body style="font-family:sans-serif;max-width:600px;margin:0 auto;padding:24px;color:#1a1a1a">
@@ -63,8 +68,17 @@ export async function POST(req: NextRequest) {
   <p style="color:#666;font-size:13px">— Rodrigo & the Explore TikiZia team</p>
 </body>
 </html>
-    `,
-  });
+      `,
+    });
+
+    if (emailError) {
+      console.error('Resend error:', emailError);
+      return NextResponse.json({ error: 'Email delivery failed' }, { status: 500 });
+    }
+  } catch (err) {
+    console.error('Resend exception:', err);
+    return NextResponse.json({ error: 'Email delivery failed' }, { status: 500 });
+  }
 
   return NextResponse.json({ success: true });
 }
