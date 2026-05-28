@@ -34,6 +34,7 @@ export default function QuizClient() {
   useEffect(() => {
     const raw = sessionStorage.getItem('tikizia_session');
     if (!raw) { router.replace('/'); return; }
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setSession(JSON.parse(raw));
 
     const savedAnswers = sessionStorage.getItem('tikizia_answers');

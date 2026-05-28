@@ -9,18 +9,17 @@ export default function ItineraryClient() {
   const params = useSearchParams();
   const [html, setHtml] = useState<string | null>(null);
   const [session, setSession] = useState<SessionData | null>(null);
-  const [error, setError] = useState<string | null>(null);
+
+  const errorParam = params.get('error');
+  const exhaustedParam = params.get('exhausted');
+  const errorMessage = errorParam
+    ? 'Something went wrong generating your itinerary. Please try again.'
+    : exhaustedParam
+    ? 'You have used all 5 generations for this purchase.'
+    : null;
 
   useEffect(() => {
-    if (params.get('error')) {
-      setError('Something went wrong generating your itinerary. Please try again.');
-      return;
-    }
-
-    if (params.get('exhausted')) {
-      setError('You have used all 5 generations for this purchase.');
-      return;
-    }
+    if (errorMessage) return;
 
     const sessionRaw = sessionStorage.getItem('tikizia_session');
     const itineraryHtml = sessionStorage.getItem('tikizia_itinerary');
@@ -30,23 +29,24 @@ export default function ItineraryClient() {
       return;
     }
 
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setSession(JSON.parse(sessionRaw));
     setHtml(itineraryHtml);
-  }, [router, params]);
+  }, [router, errorMessage]);
 
   function handlePrint() {
     window.print();
   }
 
-  if (error) {
-    const isExhausted = params.get('exhausted') === 'true';
+  if (errorMessage) {
+    const isExhausted = !!exhaustedParam;
     return (
       <main className="min-h-screen flex flex-col items-center justify-center px-6 text-center">
         <div className="text-5xl mb-6">{isExhausted ? '🎉' : '⚠️'}</div>
         <h1 className="text-2xl font-bold mb-4 text-stone-800">
           {isExhausted ? 'All generations used!' : 'Generation Error'}
         </h1>
-        <p className="text-stone-600 mb-8 max-w-md">{error}</p>
+        <p className="text-stone-600 mb-8 max-w-md">{errorMessage}</p>
         {isExhausted ? (
           <a
             href="https://exploretikizia.com"
