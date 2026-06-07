@@ -48,15 +48,22 @@ export default function GeneratingClient() {
 
         if (!res.ok) throw new Error('Generation failed');
 
-        const data = await res.json();
+        const remaining = parseInt(res.headers.get('X-Generations-Remaining') ?? '0', 10);
+
+        const reader = res.body!.getReader();
+        const decoder = new TextDecoder();
+        let html = '';
+        while (true) {
+          const { done, value } = await reader.read();
+          if (done) break;
+          html += decoder.decode(value, { stream: true });
+        }
 
         sessionStorage.setItem(
           'tikizia_session',
-          JSON.stringify({ ...session, generationsRemaining: data.generationsRemaining })
+          JSON.stringify({ ...session, generationsRemaining: remaining })
         );
-
-        sessionStorage.setItem('tikizia_itinerary', data.html);
-
+        sessionStorage.setItem('tikizia_itinerary', html);
         router.replace('/itinerary');
       } catch {
         router.replace('/itinerary?error=true');

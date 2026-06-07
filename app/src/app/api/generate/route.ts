@@ -1,6 +1,6 @@
-import { NextRequest, NextResponse } from 'next/server';
+import { NextRequest } from 'next/server';
 import { supabase } from '@/lib/supabase';
-import { generateItinerary } from '@/lib/claude';
+import { streamItinerary } from '@/lib/claude';
 import { QuizAnswers } from '@/lib/types';
 
 export const maxDuration = 60;
@@ -10,26 +10,27 @@ export async function POST(req: NextRequest) {
   const { token, answers } = body;
 
   if (!token || !answers) {
-    return NextResponse.json({ error: 'Missing token or answers' }, { status: 400 });
+    return new Response(JSON.stringify({ error: 'Missing token or answers' }), { status: 400 });
   }
 
-  // Atomic decrement: only decrements if generations_remaining > 0
-  // Returns the new count, or empty array if token not found or count was already 0
   const { data, error } = await supabase.rpc('decrement_generation', { p_token: token });
 
   if (error) {
-    console.error('Decrement RPC error:', error);
-    return NextResponse.json({ error: 'Database error' }, { status: 500 });
+    return new Response(JSON.stringify({ error: 'Database error', debug: error.message }), { status: 500 });
   }
 
   if (!data || data.length === 0) {
-    // Token not found OR generations_remaining was already 0
-    return NextResponse.json({ error: 'No generations remaining or invalid token' }, { status: 403 });
+    return new Response(JSON.stringify({ error: 'No generations remaining or invalid token' }), { status: 403 });
   }
 
   const newCount: number = data[0].generations_remaining;
+  const stream = streamItinerary(answers);
 
-  const html = await generateItinerary(answers);
-
-  return NextResponse.json({ html, generationsRemaining: newCount });
+  return new Response(stream, {
+    headers: {
+      'Content-Type': 'text/plain; charset=utf-8',
+      'X-Generations-Remaining': String(newCount),
+      'Cache-Control': 'no-cache',
+    },
+  });
 }
