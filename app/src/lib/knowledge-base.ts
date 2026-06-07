@@ -5,7 +5,6 @@ const KB_DIR = join(process.cwd(), 'knowledge-base');
 const PROMPTS_DIR = join(process.cwd(), 'prompts');
 
 const KB_FILES = [
-  'ai-concierge-brain.md',
   'providers-by-zone.md',
   'free-activities-by-zone.md',
   'local-restaurants-by-zone.md',
