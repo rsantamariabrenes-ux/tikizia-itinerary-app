@@ -55,8 +55,13 @@ export function streamItinerary(answers: QuizAnswers): ReadableStream<Uint8Array
           messages: [{ role: 'user', content: userMessage }],
         });
 
-        for await (const chunk of stream.text_stream) {
-          controller.enqueue(encoder.encode(chunk));
+        for await (const event of stream) {
+          if (
+            event.type === 'content_block_delta' &&
+            event.delta.type === 'text_delta'
+          ) {
+            controller.enqueue(encoder.encode(event.delta.text));
+          }
         }
         controller.close();
       } catch (err) {
