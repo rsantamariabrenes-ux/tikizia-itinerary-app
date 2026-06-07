@@ -35,8 +35,8 @@ INFORMACIÓN EXTRA: ${answers.extraContext || 'Ninguna'}
   const userMessage = `## KNOWLEDGE BASE\n\n${knowledgeBase}\n\n---\n\n## RECENT BLOG POSTS FROM EXPLORETIKIZIA.COM\n\n${blogPosts || 'Not available'}\n\n---\n\n## TRAVELER FORM\n\n${travelerForm}`;
 
   const message = await client.messages.create({
-    model: 'claude-sonnet-4-6',
-    max_tokens: 8192,
+    model: 'claude-haiku-4-5-20251001',
+    max_tokens: 4096,
     system: systemPrompt,
     messages: [{ role: 'user', content: userMessage }],
   });
