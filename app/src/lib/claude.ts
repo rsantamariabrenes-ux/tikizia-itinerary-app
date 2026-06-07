@@ -34,10 +34,21 @@ INFORMACIÓN EXTRA: ${answers.extraContext || 'Ninguna'}
 
   const userMessage = `## KNOWLEDGE BASE\n\n${knowledgeBase}\n\n---\n\n## RECENT BLOG POSTS FROM EXPLORETIKIZIA.COM\n\n${blogPosts || 'Not available'}\n\n---\n\n## TRAVELER FORM\n\n${travelerForm}`;
 
+  const apiModePrefix = `MODO API — INSTRUCCIONES CRÍTICAS DE OPERACIÓN:
+1. Estás ejecutándote vía API sin interacción con el usuario y sin acceso a internet.
+2. GENERA el HTML completo INMEDIATAMENTE. NO hagas revisión previa, NO pidas confirmaciones, NO hagas preguntas.
+3. Para URLs que no puedas verificar: usa "#" como placeholder.
+4. Tu respuesta debe comenzar con <!DOCTYPE html> en la primera línea.
+5. Si el contenido completo excede el límite, prioriza: tarjeta info + índice + itinerario día a día completo + sección ET-CTA.
+
+---
+
+`;
+
   const message = await client.messages.create({
     model: 'claude-haiku-4-5-20251001',
-    max_tokens: 4096,
-    system: systemPrompt,
+    max_tokens: 8192,
+    system: apiModePrefix + systemPrompt,
     messages: [{ role: 'user', content: userMessage }],
   });
 
