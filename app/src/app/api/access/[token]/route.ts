@@ -3,12 +3,13 @@ import { supabase } from '@/lib/supabase';
 
 export async function GET(
   _req: NextRequest,
-  { params }: { params: { token: string } }
+  { params }: { params: Promise<{ token: string }> }
 ) {
+  const { token } = await params;
   const { data, error } = await supabase
     .from('access_tokens')
     .select('token, generations_remaining, email')
-    .eq('token', params.token)
+    .eq('token', token)
     .single();
 
   if (error || !data) {
