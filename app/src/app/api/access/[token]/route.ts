@@ -13,7 +13,7 @@ export async function GET(
     .single();
 
   if (error || !data) {
-    return NextResponse.json({ error: 'Invalid or expired token' }, { status: 401 });
+    return NextResponse.json({ error: 'Invalid or expired token', debug: error?.message, code: error?.code }, { status: 401 });
   }
 
   return NextResponse.json({
