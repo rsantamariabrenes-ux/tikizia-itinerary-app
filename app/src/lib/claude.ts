@@ -7,12 +7,21 @@ const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY! });
 const ADVENTURE_LABELS = ['Easy-going', 'Moderate', 'Adventurous', 'Extreme'];
 const HIKING_LABELS = ['Not really', 'Casual strolls', 'Long trails', 'I live for it'];
 
+const ADOBECAR_IFRAME = `<iframe src="https://www.adobecar.com/en/iframe/?iframe_layout=1&promo_code=EXPTK" frameborder="0" allowfullscreen style="height:500px;min-height:450px;width:600px;max-width:100%"></iframe>`;
+
+const CAR_RENTAL_KEYWORDS = ['rent', 'car rental', 'alquiler', 'rented', 'self-drive', 'auto alquilado', 'carro alquilado'];
+
+function isCarRental(transport: string): boolean {
+  const t = transport.toLowerCase();
+  return CAR_RENTAL_KEYWORDS.some(k => t.includes(k));
+}
+
 const API_MODE_PREFIX = `API MODE — CRITICAL OPERATING INSTRUCTIONS:
 1. You are running via API with no user interaction and no internet access.
 2. OUTPUT LANGUAGE: Generate the ENTIRE itinerary in ENGLISH. All section titles, descriptions, tips, restaurant names, activity names, and UI text must be in English.
-3. Generate the complete HTML IMMEDIATELY. Do NOT review first, do NOT ask for confirmation, do NOT ask questions.
-4. For URLs you cannot verify: use "#" as a placeholder.
-5. Your response must begin with <!DOCTYPE html> on the first line.
+3. Generate the complete HTML IMMEDIATELY. Do NOT wrap in markdown code fences. Do NOT write \`\`\`html. Do NOT review first. Do NOT ask questions.
+4. Your response must begin with <!DOCTYPE html> — that is the very first character output. Nothing before it.
+5. For URLs you cannot verify: use "#" as a placeholder.
 6. If the full content exceeds the limit, prioritize: info card + index + complete day-by-day itinerary + ET-CTA section.
 
 ---
@@ -37,7 +46,47 @@ ACCOMMODATION ALREADY BOOKED: ${answers.hasAccommodation ? 'Yes' : 'No'}
 EXTRA INFO: ${answers.extraContext || 'None'}
 `.trim();
 
-  return `## KNOWLEDGE BASE\n\n${knowledgeBase}\n\n---\n\n## TRAVELER FORM\n\n${travelerForm}`;
+  let carRentalInstruction = '';
+  if (isCarRental(answers.transport)) {
+    carRentalInstruction = `
+
+---
+
+## ⚠️ MANDATORY CAR RENTAL INSTRUCTION
+
+The traveler is renting a car. You MUST include the following in the General Orientation section, as a fourth orientation-item card (after the three standard cards), with the exact HTML below — do NOT modify the iframe or omit it:
+
+\`\`\`html
+<div class="orientation-item">
+  <div class="orientation-header">
+    <div class="orientation-icon">🚗</div>
+    <h3>Car Rental — Book with Our Trusted Partner</h3>
+  </div>
+  <p>For the best rates and reliable vehicles in Costa Rica, use the search below to compare options and reserve directly. No extra fees — best price guaranteed.</p>
+  <div style="margin-top:12px;overflow-x:auto">
+    ${ADOBECAR_IFRAME}
+  </div>
+</div>
+\`\`\`
+
+Do NOT recommend any other car rental company (Hertz, Budget, Alamo, Economy, National, etc.). This is the ONLY car rental recommendation allowed.`;
+  }
+
+  return `## KNOWLEDGE BASE\n\n${knowledgeBase}\n\n---\n\n## TRAVELER FORM\n\n${travelerForm}${carRentalInstruction}`;
+}
+
+// Strip opening ```html and closing ``` code fences if the model wraps the output
+function stripCodeFence(chunk: string, buffer: { text: string; stripped: boolean }): string {
+  if (buffer.stripped) return chunk;
+
+  buffer.text += chunk;
+
+  // Wait until we have enough to detect a code fence
+  if (buffer.text.length < 20) return '';
+
+  buffer.stripped = true;
+  // Remove leading ```html\n or ```\n if present
+  return buffer.text.replace(/^```(?:html)?\n?/, '');
 }
 
 export function streamItinerary(answers: QuizAnswers): ReadableStream<Uint8Array> {
@@ -48,6 +97,7 @@ export function streamItinerary(answers: QuizAnswers): ReadableStream<Uint8Array
 
   return new ReadableStream({
     async start(controller) {
+      const fenceBuffer = { text: '', stripped: false };
       try {
         const stream = await client.messages.stream({
           model: 'claude-haiku-4-5-20251001',
@@ -61,7 +111,8 @@ export function streamItinerary(answers: QuizAnswers): ReadableStream<Uint8Array
             event.type === 'content_block_delta' &&
             event.delta.type === 'text_delta'
           ) {
-            controller.enqueue(encoder.encode(event.delta.text));
+            const cleaned = stripCodeFence(event.delta.text, fenceBuffer);
+            if (cleaned) controller.enqueue(encoder.encode(cleaned));
           }
         }
         controller.close();

@@ -97,6 +97,31 @@ El incumplimiento de esta regla hace que el itinerario parezca publicidad, no gu
 
 ---
 
+## REGLA DE RENTA DE AUTOS — ADOBECAR (OBLIGATORIO)
+
+**Si el campo TRANSPORT del formulario menciona renta de carro, auto alquilado, car rental, alquiler de vehículo, o cualquier variante similar:**
+
+1. En la sección **Orientaciones Generales**, incluir una tarjeta de orientación con clase `orientation-item` (fondo predeterminado) con el siguiente contenido:
+
+```html
+<div class="orientation-item">
+  <div class="orientation-header">
+    <div class="orientation-icon">🚗</div>
+    <h3>Car Rental — Book with Our Trusted Partner</h3>
+  </div>
+  <p>For the best rates and reliable vehicles in Costa Rica, book your car rental through our official affiliate partner AdobeCar. Use the search below to compare options and reserve directly:</p>
+  <div style="margin-top:12px;overflow-x:auto">
+    <iframe src="https://www.adobecar.com/en/iframe/?iframe_layout=1&promo_code=EXPTK" frameborder="0" allowfullscreen style="height:500px;min-height:450px;width:600px;max-width:100%"></iframe>
+  </div>
+</div>
+```
+
+2. **REGLA ABSOLUTA:** NO mencionar, recomendar ni enlazar ninguna otra empresa de renta de autos (Hertz, Budget, Economy, Alamo, National, Adobe directamente sin iframe, etc.). El único método de reserva de autos es el iframe de AdobeCar con el código de afiliado `EXPTK`.
+
+3. Si el iframe no cabe bien en la sección de Orientaciones, colocarlo en la sección **Reservas Importantes** como una tarjeta `reservation-card` con el mismo contenido.
+
+---
+
 ## SECCIÓN ADICIONAL OBLIGATORIA — "RESERVA CON EXPLORE TIKIZIA"
 
 Incluir SIEMPRE esta sección después de "Reservas Importantes" y antes de "Consejos Extra":
@@ -1059,6 +1084,7 @@ Antes de generar el contenido, busca información actualizada sobre:
 - **⭐ SIEMPRE** buscar el sitio web oficial dentro de la página de Google Maps (campo "Sitio web").
 - **⭐ CONTACTO DE EMERGENCIA CR:** Usar SIEMPRE Cruz Roja (2222-2911) y número 911. NO incluir Consulado/Embajada — estos itinerarios son para viajes DENTRO de Costa Rica.
 - **⭐ NUNCA** inventar URLs — siempre buscar y verificar antes de agregar al HTML.
+- **⭐ RENTA DE AUTOS:** Si TRANSPORT menciona renta de carro → incluir OBLIGATORIAMENTE el iframe de AdobeCar (`promo_code=EXPTK`). NO recomendar ninguna otra empresa de renta. Es un link de afiliado — solo el iframe.
 
 ---
 
