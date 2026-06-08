@@ -48,3 +48,23 @@
 - Zona popular: reservar tours y restaurantes con al menos 2-3 días de anticipación en temporada alta
 - Transporte: auto alquilado o shuttle desde San José (3h aprox.)
 - [agregar más notas]
+
+---
+
+## ROD'S BLOG NOTES
+
+> Paste condensed tips from blog posts here. No special format needed — write naturally.
+> Include: the topic, key advice, personal experience, and anything a traveler wouldn't find on Google.
+> Each entry should start with the blog post topic in bold.
+
+<!--
+EXAMPLE FORMAT:
+
+**Cómo visitar el Parque Nacional Manuel Antonio sin multitudes**
+El parque abre a las 7 AM y el cupo diario se agota rápido en temporada alta. Reservar entrada en línea con mínimo 3 días de anticipación. Los monos ardilla son los más tímidos — los capuchinos son los que roban la comida. Tip: entrar temprano y hacer el sendero Punta Catedral antes de las 9 AM.
+
+**Las mejores playas de Manuel Antonio que nadie menciona**
+Playa Biesanz queda a 5 min del centro pero es 10 veces menos concurrida que las playas del parque. Ideal para snorkeling tranquilo. Llegar antes de las 9 AM para encontrar estacionamiento.
+-->
+
+

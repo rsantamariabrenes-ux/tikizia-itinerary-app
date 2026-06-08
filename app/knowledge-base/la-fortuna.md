@@ -46,3 +46,23 @@
 - Clima: húmedo todo el año — llevar capa impermeable
 - Transporte: auto alquilado recomendado para mayor flexibilidad
 - [agregar más notas]
+
+---
+
+## ROD'S BLOG NOTES
+
+> Paste condensed tips from blog posts here. No special format needed — write naturally.
+> Include: the topic, key advice, personal experience, and anything a traveler wouldn't find on Google.
+> Each entry should start with the blog post topic in bold.
+
+<!--
+EXAMPLE FORMAT:
+
+**Cómo visitar la Catarata La Fortuna sin colas**
+La entrada cuesta $18 pero si llegas antes de las 7 AM el lugar está vacío. Hay 500 escalones de bajada — llevar zapatos cerrados. El agua está fría pero vale la pena meterse. Evitar los fines de semana en temporada alta.
+
+**Aguas termales: cuáles valen la pena y cuáles no**
+Las aguas termales "de lujo" tipo Tabacón o Baldi cuestan $60-80 por persona. Para quienes van con presupuesto, existe el río termal natural gratuito cerca de El Choyin — Rod lo recomienda como experiencia más auténtica. Solo accesible en auto.
+-->
+
+
