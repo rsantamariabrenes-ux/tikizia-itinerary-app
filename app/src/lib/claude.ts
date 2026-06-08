@@ -7,7 +7,7 @@ const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY! });
 const ADVENTURE_LABELS = ['Easy-going', 'Moderate', 'Adventurous', 'Extreme'];
 const HIKING_LABELS = ['Not really', 'Casual strolls', 'Long trails', 'I live for it'];
 
-const ADOBECAR_IFRAME = `<iframe src="https://www.adobecar.com/en/iframe/?iframe_layout=1&promo_code=EXPTK" frameborder="0" allowfullscreen style="height:500px;min-height:450px;width:600px;max-width:100%"></iframe>`;
+const ADOBECAR_IFRAME = `<iframe src="https://www.adobecar.com/en/iframe/?iframe_layout=1&promo_code=EXPTK" frameborder="0" allowfullscreen style="width:100%;max-width:620px;height:500px;min-height:450px;border:none;border-radius:8px;display:block"></iframe>`;
 
 const CAR_RENTAL_KEYWORDS = ['rent', 'car rental', 'alquiler', 'rented', 'self-drive', 'auto alquilado', 'carro alquilado'];
 
@@ -63,7 +63,7 @@ The traveler is renting a car. You MUST include the following in the General Ori
     <h3>Car Rental — Book with Our Trusted Partner</h3>
   </div>
   <p>For the best rates and reliable vehicles in Costa Rica, use the search below to compare options and reserve directly. No extra fees — best price guaranteed.</p>
-  <div style="margin-top:12px;overflow-x:auto">
+  <div style="margin-top:12px;display:flex;justify-content:center;width:100%">
     ${ADOBECAR_IFRAME}
   </div>
 </div>
