@@ -79,7 +79,7 @@ export default function GeneratingClient() {
       <h1 className="text-2xl font-bold text-white mb-4">
         Building your Costa Rica itinerary...
       </h1>
-      <p className="text-green-200 mb-12">This takes about 20–40 seconds. Worth the wait!</p>
+      <p className="text-green-200 mb-12">This takes about 30–90 seconds. Worth the wait!</p>
       <div className="space-y-3 text-green-300 text-sm">
         {MESSAGES.map((msg, i) => (
           <p key={i} className="animate-pulse" style={{ animationDelay: `${i * 0.4}s` }}>

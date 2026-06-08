@@ -3,7 +3,7 @@ import { supabase } from '@/lib/supabase';
 import { streamItinerary } from '@/lib/claude';
 import { QuizAnswers } from '@/lib/types';
 
-export const maxDuration = 60;
+export const maxDuration = 300;
 
 export async function POST(req: NextRequest) {
   const body = await req.json() as { token: string; answers: QuizAnswers };
