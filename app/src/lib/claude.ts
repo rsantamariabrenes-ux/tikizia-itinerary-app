@@ -22,7 +22,8 @@ const API_MODE_PREFIX = `API MODE — CRITICAL OPERATING INSTRUCTIONS:
 3. Generate the complete HTML IMMEDIATELY. Do NOT wrap in markdown code fences. Do NOT write \`\`\`html. Do NOT review first. Do NOT ask questions.
 4. Your response must begin with <!DOCTYPE html> — that is the very first character output. Nothing before it.
 5. For URLs you cannot verify: use "#" as a placeholder.
-6. If the full content exceeds the limit, prioritize: info card + index + complete day-by-day itinerary + ET-CTA section.
+6. CONCISENESS IS MANDATORY: Keep output compact. Activity descriptions: max 2 sentences. Restaurant descriptions: 1 sentence. Tips: bullet points only. No filler text, no padding, no lengthy intros. The goal is a complete itinerary, not a verbose one.
+7. Complete ALL sections (about, orientation, gastronomy, accommodation, itinerary, budget, reservations, et-cta, tips). Never stop mid-document.
 
 ---
 
@@ -120,7 +121,7 @@ export function streamItinerary(answers: QuizAnswers): ReadableStream<Uint8Array
       try {
         const stream = await client.messages.stream({
           model: 'claude-sonnet-4-6',
-          max_tokens: 16000,
+          max_tokens: 12000,
           system: systemPrompt,
           messages: [{ role: 'user', content: userMessage }],
         });
