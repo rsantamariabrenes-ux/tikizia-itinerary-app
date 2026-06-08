@@ -57,14 +57,47 @@
 > Include: the topic, key advice, personal experience, and anything a traveler wouldn't find on Google.
 > Each entry should start with the blog post topic in bold.
 
-<!--
-EXAMPLE FORMAT:
+**Parque Nacional Manuel Antonio — Guía práctica completa**
+Horario: miércoles a lunes 7 AM – 4 PM. CERRADO los martes. Las playas cierran a las 3 PM y todos deben salir a las 4 PM.
+Entrada: $16 adultos extranjeros, $5 niños 2-12 años, gratis menores de 2.
+Las entradas se compran SOLO en línea — no se venden en la puerta. En temporada alta (Navidad, Año Nuevo, Semana Santa) comprar con semanas de anticipación. El parque permite ~3000 visitantes por día.
 
-**Cómo visitar el Parque Nacional Manuel Antonio sin multitudes**
-El parque abre a las 7 AM y el cupo diario se agota rápido en temporada alta. Reservar entrada en línea con mínimo 3 días de anticipación. Los monos ardilla son los más tímidos — los capuchinos son los que roban la comida. Tip: entrar temprano y hacer el sendero Punta Catedral antes de las 9 AM.
+**Cómo llegar al parque**
+Desde San José: 3.5 horas en auto. Carretera completamente pavimentada — no se necesita 4x4.
+Bus público desde la estación de Quepos: sale cada 30 min desde las 5:30 AM, cuesta ~385 CRC. Bajarse en la última parada (roundabout cerca de Playa Espadilla Norte) y caminar ~10 min por el "Beach Trail" hasta la entrada.
 
-**Las mejores playas de Manuel Antonio que nadie menciona**
-Playa Biesanz queda a 5 min del centro pero es 10 veces menos concurrida que las playas del parque. Ideal para snorkeling tranquilo. Llegar antes de las 9 AM para encontrar estacionamiento.
--->
+**Estacionamiento — IMPORTANTE**
+El parque no tiene parqueo oficial propio. El parqueo recomendado está a 150 metros de la entrada — en Google Maps aparece como "Manuel Antonio National Park – Official Parking". Costo: ~$10 USD por día.
+ADVERTENCIA: al bajar la última cuesta, antes de llegar al parque, hay personas que detienen carros y ofrecen "parqueo oficial" — NO ES CIERTO. Se ubican cerca de una playa que no es la del parque. Ignorar, seguir manejando.
+
+**Guía vs sin guía**
+Sin guía: perfectamente disfrutable, especialmente en temporada baja. Se pueden ver monos y perezosos sin ayuda.
+Con guía naturalista: muy recomendado para familias con niños y quienes quieran ver perezosos — los guías tienen telescopios y ojos entrenados. Costo: ~$25/persona por ~2 horas solo de guía (sin entrada ni transporte). Pedir certificación ICT (carnet con foto y número de ID).
+Tour completo (transporte + entrada + guía + agua/fruta): ideal para quien no quiere manejar ni buscar tiquetes.
+
+**Senderos — cuál hacer sí o sí**
+Punta Catedral (1.4 km, loop): el mejor sendero del parque. Vistas increíbles del océano, fauna abundante. Empieza en Playa Manuel Antonio y rodea la punta. ~1 hora.
+Sendero Perezoso (universal): accesible para sillas de ruedas, plataformas de madera, señalización en Braille. Conecta con Playa Espadilla Sur pasando por manglares.
+Playa Gemelas: menos concurrida que Playa Manuel Antonio, misma agua turquesa. Si Playa MA está llena, ir a Gemelas.
+Sendero Mirador (1.3 km): tiene muchos escalones pero da vistas de Punta Serrucho — vale el esfuerzo.
+
+**Instalaciones dentro del parque**
+Casilleros en la entrada: ~$6/día. Recomendados si van a la playa.
+Baños: en la entrada y en 3 puntos dentro del parque (uno con duchas y vestidores).
+Cafetería interior: agua, café, jugos, sándwiches, ensaladas, helados. Plástico de un solo uso prohibido dentro del parque.
+Restaurante recomendado afuera del parque: Restaurante El Chantel del Parque — a la izquierda saliendo, detrás de la gelatería. Precios razonables, comida local.
+
+**Qué llevar**
+Ropa ligera dry-fit, sombrero, zapatos cerrados para senderos largos (flip-flops solo para ir directo a la playa).
+Repelente de insectos y bloqueador solar — obligatorios.
+Botella de agua rellena con hielo — el calor y humedad son intensos.
+Toalla de microfibra si van a la playa.
+En temporada lluviosa (mayo-diciembre): impermeable liviano y mochila impermeable.
+
+**Animales más comunes**
+Monos capuchinos: los más activos y "ladrones" — no sacar comida cerca de ellos.
+Monos ardilla: más tímidos.
+Perezosos: difíciles de ver sin guía por su camuflaje.
+Iguanas y lagartijas en las playas.
 
 
