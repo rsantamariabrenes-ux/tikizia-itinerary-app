@@ -7,12 +7,13 @@ const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY! });
 const ADVENTURE_LABELS = ['Easy-going', 'Moderate', 'Adventurous', 'Extreme'];
 const HIKING_LABELS = ['Not really', 'Casual strolls', 'Long trails', 'I live for it'];
 
-const API_MODE_PREFIX = `MODO API — INSTRUCCIONES CRÍTICAS DE OPERACIÓN:
-1. Estás ejecutándote vía API sin interacción con el usuario y sin acceso a internet.
-2. GENERA el HTML completo INMEDIATAMENTE. NO hagas revisión previa, NO pidas confirmaciones, NO hagas preguntas.
-3. Para URLs que no puedas verificar: usa "#" como placeholder.
-4. Tu respuesta debe comenzar con <!DOCTYPE html> en la primera línea.
-5. Si el contenido completo excede el límite, prioriza: tarjeta info + índice + itinerario día a día completo + sección ET-CTA.
+const API_MODE_PREFIX = `API MODE — CRITICAL OPERATING INSTRUCTIONS:
+1. You are running via API with no user interaction and no internet access.
+2. OUTPUT LANGUAGE: Generate the ENTIRE itinerary in ENGLISH. All section titles, descriptions, tips, restaurant names, activity names, and UI text must be in English.
+3. Generate the complete HTML IMMEDIATELY. Do NOT review first, do NOT ask for confirmation, do NOT ask questions.
+4. For URLs you cannot verify: use "#" as a placeholder.
+5. Your response must begin with <!DOCTYPE html> on the first line.
+6. If the full content exceeds the limit, prioritize: info card + index + complete day-by-day itinerary + ET-CTA section.
 
 ---
 
@@ -20,20 +21,20 @@ const API_MODE_PREFIX = `MODO API — INSTRUCCIONES CRÍTICAS DE OPERACIÓN:
 
 function buildMessages(answers: QuizAnswers, knowledgeBase: string) {
   const travelerForm = `
-DESTINOS: ${answers.destinations.join(' + ')}
-FECHA DE INICIO: ${answers.startDate}
-DURACIÓN: ${answers.duration}
-VIAJEROS: ${answers.travelers}
-OBJETIVO DEL VIAJE: ${answers.tripGoal}
-ACTIVIDADES DE INTERÉS: ${answers.activities.join(', ')}
-ESTILO DE VIAJE: ${answers.travelStyle}
-NIVEL DE AVENTURA: ${ADVENTURE_LABELS[answers.adventureLevel - 1] ?? 'Moderate'}
-INTERÉS EN SENDERISMO: ${HIKING_LABELS[answers.hikingInterest - 1] ?? 'Casual strolls'}
-VIAJAN CON NIÑOS: ${answers.hasKids ? `Sí — edades: ${answers.kidsAges || 'no especificadas'}` : 'No'}
-TRANSPORTE: ${answers.transport}
-PRESUPUESTO TOTAL: ${answers.budget} por persona (excluyendo vuelos)
-YA TIENEN ALOJAMIENTO: ${answers.hasAccommodation ? 'Sí' : 'No'}
-INFORMACIÓN EXTRA: ${answers.extraContext || 'Ninguna'}
+DESTINATIONS: ${answers.destinations.join(' + ')}
+START DATE: ${answers.startDate}
+DURATION: ${answers.duration}
+TRAVELERS: ${answers.travelers}
+TRIP GOAL: ${answers.tripGoal}
+ACTIVITIES OF INTEREST: ${answers.activities.join(', ')}
+TRAVEL STYLE: ${answers.travelStyle}
+ADVENTURE LEVEL: ${ADVENTURE_LABELS[answers.adventureLevel - 1] ?? 'Moderate'}
+HIKING INTEREST: ${HIKING_LABELS[answers.hikingInterest - 1] ?? 'Casual strolls'}
+TRAVELING WITH KIDS: ${answers.hasKids ? `Yes — ages: ${answers.kidsAges || 'not specified'}` : 'No'}
+TRANSPORT: ${answers.transport}
+TOTAL BUDGET: ${answers.budget} per person (excluding flights)
+ACCOMMODATION ALREADY BOOKED: ${answers.hasAccommodation ? 'Yes' : 'No'}
+EXTRA INFO: ${answers.extraContext || 'None'}
 `.trim();
 
   return `## KNOWLEDGE BASE\n\n${knowledgeBase}\n\n---\n\n## TRAVELER FORM\n\n${travelerForm}`;

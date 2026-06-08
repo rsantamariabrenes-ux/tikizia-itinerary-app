@@ -57,47 +57,47 @@
 > Include: the topic, key advice, personal experience, and anything a traveler wouldn't find on Google.
 > Each entry should start with the blog post topic in bold.
 
-**Parque Nacional Manuel Antonio — Guía práctica completa**
-Horario: miércoles a lunes 7 AM – 4 PM. CERRADO los martes. Las playas cierran a las 3 PM y todos deben salir a las 4 PM.
-Entrada: $16 adultos extranjeros, $5 niños 2-12 años, gratis menores de 2.
-Las entradas se compran SOLO en línea — no se venden en la puerta. En temporada alta (Navidad, Año Nuevo, Semana Santa) comprar con semanas de anticipación. El parque permite ~3000 visitantes por día.
+**Manuel Antonio National Park — Complete practical guide**
+Hours: Wednesday to Monday 7 AM – 4 PM. CLOSED on Tuesdays. Beaches close at 3 PM, everyone must exit by 4 PM.
+Entrance fee: $16 adults (foreigners), $5 kids 2-12, free under 2.
+Tickets must be purchased ONLINE ONLY — not sold at the entrance. During peak season (Christmas, New Year, Easter Week) buy tickets weeks in advance. Park capacity is ~3,000 visitors per day.
 
-**Cómo llegar al parque**
-Desde San José: 3.5 horas en auto. Carretera completamente pavimentada — no se necesita 4x4.
-Bus público desde la estación de Quepos: sale cada 30 min desde las 5:30 AM, cuesta ~385 CRC. Bajarse en la última parada (roundabout cerca de Playa Espadilla Norte) y caminar ~10 min por el "Beach Trail" hasta la entrada.
+**Getting to the park**
+From San José: 3.5 hour drive. Road is fully paved — no 4x4 needed.
+Public bus from Quepos bus station: departs every 30 min from 5:30 AM, costs ~385 CRC. Get off at the last stop (roundabout near Playa Espadilla Norte) and walk ~10 min along "Beach Trail" to the entrance.
 
-**Estacionamiento — IMPORTANTE**
-El parque no tiene parqueo oficial propio. El parqueo recomendado está a 150 metros de la entrada — en Google Maps aparece como "Manuel Antonio National Park – Official Parking". Costo: ~$10 USD por día.
-ADVERTENCIA: al bajar la última cuesta, antes de llegar al parque, hay personas que detienen carros y ofrecen "parqueo oficial" — NO ES CIERTO. Se ubican cerca de una playa que no es la del parque. Ignorar, seguir manejando.
+**Parking — IMPORTANT**
+The park has no official parking lot of its own. Recommended parking is 150 meters from the entrance — search "Manuel Antonio National Park – Official Parking" on Google Maps. Cost: ~$10 USD per day.
+WARNING: When driving down the last hill before the park, there are people who stop cars and offer "official parking" — this is NOT true. They are located near a beach that is NOT the park. Ignore them, keep driving.
 
-**Guía vs sin guía**
-Sin guía: perfectamente disfrutable, especialmente en temporada baja. Se pueden ver monos y perezosos sin ayuda.
-Con guía naturalista: muy recomendado para familias con niños y quienes quieran ver perezosos — los guías tienen telescopios y ojos entrenados. Costo: ~$25/persona por ~2 horas solo de guía (sin entrada ni transporte). Pedir certificación ICT (carnet con foto y número de ID).
-Tour completo (transporte + entrada + guía + agua/fruta): ideal para quien no quiere manejar ni buscar tiquetes.
+**Guide vs no guide**
+No guide: perfectly enjoyable, especially in low season. Monkeys and sloths can be spotted independently.
+Naturalist guide: highly recommended for families with kids and anyone who wants to see sloths — guides have telescopes and trained eyes. Cost: ~$25/person for ~2 hours (guide only, no ticket or transport). Ask for ICT certification badge.
+Full tour (transport + ticket + guide + water/fruit): ideal for those who don't want to drive or handle logistics.
 
-**Senderos — cuál hacer sí o sí**
-Punta Catedral (1.4 km, loop): el mejor sendero del parque. Vistas increíbles del océano, fauna abundante. Empieza en Playa Manuel Antonio y rodea la punta. ~1 hora.
-Sendero Perezoso (universal): accesible para sillas de ruedas, plataformas de madera, señalización en Braille. Conecta con Playa Espadilla Sur pasando por manglares.
-Playa Gemelas: menos concurrida que Playa Manuel Antonio, misma agua turquesa. Si Playa MA está llena, ir a Gemelas.
-Sendero Mirador (1.3 km): tiene muchos escalones pero da vistas de Punta Serrucho — vale el esfuerzo.
+**Trails — the must-do**
+Punta Catedral (1.4 km loop): best trail in the park. Incredible ocean views, abundant wildlife. Starts at Playa Manuel Antonio and loops around the point. ~1 hour.
+Sendero Perezoso (universal access): wheelchair accessible, wooden platforms, Braille signage. Connects to Playa Espadilla Sur through mangroves.
+Playa Gemelas: less crowded than Playa Manuel Antonio, same turquoise water. If Playa MA is packed, head to Gemelas.
+Sendero Mirador (1.3 km): many steps but rewarding views of Punta Serrucho — worth the effort.
 
-**Instalaciones dentro del parque**
-Casilleros en la entrada: ~$6/día. Recomendados si van a la playa.
-Baños: en la entrada y en 3 puntos dentro del parque (uno con duchas y vestidores).
-Cafetería interior: agua, café, jugos, sándwiches, ensaladas, helados. Plástico de un solo uso prohibido dentro del parque.
-Restaurante recomendado afuera del parque: Restaurante El Chantel del Parque — a la izquierda saliendo, detrás de la gelatería. Precios razonables, comida local.
+**Facilities inside the park**
+Lockers at entrance: ~$6/day. Recommended if going to the beach.
+Bathrooms: at the entrance and 3 points inside (one with showers and changing rooms).
+Interior cafeteria: water, coffee, juices, sandwiches, salads, ice cream. Single-use plastic prohibited inside the park.
+Recommended restaurant outside the park: Restaurante El Chantel del Parque — on the left side exiting, behind the gelateria. Reasonable prices, good local food.
 
-**Qué llevar**
-Ropa ligera dry-fit, sombrero, zapatos cerrados para senderos largos (flip-flops solo para ir directo a la playa).
-Repelente de insectos y bloqueador solar — obligatorios.
-Botella de agua rellena con hielo — el calor y humedad son intensos.
-Toalla de microfibra si van a la playa.
-En temporada lluviosa (mayo-diciembre): impermeable liviano y mochila impermeable.
+**What to bring**
+Light dry-fit clothing, hat, closed-toe shoes for longer trails (flip-flops only if going straight to the beach).
+Insect repellent and sunscreen — non-negotiable.
+Insulated water bottle — heat and humidity are intense.
+Microfiber towel if going to the beach.
+In rainy season (May–December): light rain jacket and waterproof backpack.
 
-**Animales más comunes**
-Monos capuchinos: los más activos y "ladrones" — no sacar comida cerca de ellos.
-Monos ardilla: más tímidos.
-Perezosos: difíciles de ver sin guía por su camuflaje.
-Iguanas y lagartijas en las playas.
+**Most common wildlife**
+White-faced capuchin monkeys: most active — do NOT take out food near them, they will steal it.
+Squirrel monkeys: shyer and smaller.
+Sloths: hard to spot without a guide due to camouflage.
+Iguanas and lizards: common on the beaches.
 
 
