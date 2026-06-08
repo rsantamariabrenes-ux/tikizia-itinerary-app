@@ -72,7 +72,26 @@ The traveler is renting a car. You MUST include the following in the General Ori
 Do NOT recommend any other car rental company (Hertz, Budget, Alamo, Economy, National, etc.). This is the ONLY car rental recommendation allowed.`;
   }
 
-  return `## KNOWLEDGE BASE\n\n${knowledgeBase}\n\n---\n\n## TRAVELER FORM\n\n${travelerForm}${carRentalInstruction}`;
+  const kbInstruction = `
+---
+
+## ⚠️ MANDATORY: HOW TO USE THE KNOWLEDGE BASE ABOVE
+
+The KNOWLEDGE BASE contains curated, first-hand data from Rod (local expert guide). It takes priority over your general training knowledge. Apply these rules strictly:
+
+1. **RESTAURANTS**: Use ONLY restaurants listed in the KB for the destination. Include Rod's exact tip as an insider quote or note (e.g. "Rod's tip: …").
+2. **FREE ACTIVITIES**: Include the free activities from the KB with Rod's best-time and insider tip.
+3. **ROD'S BLOG NOTES**: This is the most valuable content. Surface Rod's specific facts in the itinerary:
+   - Exact opening hours, closing days, entrance fees → put in the activity card
+   - Parking tips and scam warnings → put in an alert-box inside the relevant day
+   - Trail recommendations with distances → use as specific activities
+   - Guide recommendations (cost, what to ask for) → include in the activity description
+   - What to bring, wildlife tips → include in the day highlights or tips section
+4. **PROVIDERS**: Use the provider booking links (wa.me/50687979494) for activities that have ✅ next to them.
+5. **GENERAL NOTES**: Use the zona general notes (best season, transport tips) in the Orientation section.
+6. If the KB has data for the destination → use it. Do NOT substitute with generic internet knowledge when specific KB data exists.`;
+
+  return `## KNOWLEDGE BASE\n\n${knowledgeBase}\n\n${kbInstruction}\n\n---\n\n## TRAVELER FORM\n\n${travelerForm}${carRentalInstruction}`;
 }
 
 // Strip opening ```html and closing ``` code fences if the model wraps the output
