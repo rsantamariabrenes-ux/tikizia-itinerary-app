@@ -9,6 +9,8 @@ const KB_FILES = [
   'free-activities-by-zone.md',
   'local-restaurants-by-zone.md',
   'tour-catalog-notes.md',
+  'la-fortuna.md',
+  'manuel-antonio.md',
 ];
 
 export function loadKnowledgeBase(): string {
